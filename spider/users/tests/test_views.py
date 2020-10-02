@@ -5,11 +5,7 @@ from django.test import RequestFactory
 
 from spider.users.models import User
 from spider.users.tests.factories import UserFactory
-from spider.users.views import (
-    UserRedirectView,
-    UserUpdateView,
-    user_detail_view,
-)
+from spider.users.views import UserRedirectView, UserUpdateView, user_detail_view
 
 pytestmark = pytest.mark.django_db
 
