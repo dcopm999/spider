@@ -23,3 +23,11 @@ class Company(models.Model):
     class Meta:
         verbose_name=_('Company')
         verbose_name_plural= _('Companies')
+
+
+class Product(models.Model):
+    title = models.CharField(max_length=100, verbose_name=_('Title'))
+    description = models.CharField(max_length=250, verbose_name=_('Description'))
+    category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, verbose_name=_('Category'))
+    company = models.ForeignKey(Company, on_delete=models.CASCADE, verbose_name=_('Company'))
+    is_active = models.BooleanField(default=False, verbose_name=('Active'))

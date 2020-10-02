@@ -11,3 +11,10 @@ class CategoryAdmin(admin.ModelAdmin):
 @admin.register(models.Company)
 class CompanyAdmin(admin.ModelAdmin):
     list_dispaly = ['description', 'is_active']
+    list_filter = ['is_active']
+
+
+@admin.register(models.Product)
+class ProductAdmin(admin.ModelAdmin):
+    list_display = ['title', 'description', 'category', 'company', 'is_active']
+    list_filter = ['is_active']
