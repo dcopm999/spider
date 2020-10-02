@@ -1,8 +1,6 @@
-from rest_framework import viewsets
-from rest_framework import permissions
-from rest_framework import filters
+from rest_framework import permissions, viewsets
 
-from spider.products import models, serializers, filters
+from spider.products import filters, models, serializers
 
 
 class CategoryViewSet(viewsets.ModelViewSet):
@@ -22,4 +20,4 @@ class ProductViewSet(viewsets.ModelViewSet):
     serializer_class = serializers.ProductSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     filterset_class = filters.ProductFilter
-    filterset_fields = ['title', 'category', 'company']
+    filterset_fields = ["title", "category", "company"]

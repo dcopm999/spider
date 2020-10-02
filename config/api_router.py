@@ -1,10 +1,8 @@
 from django.conf import settings
 from rest_framework.routers import DefaultRouter, SimpleRouter
-from rest_framework import authtoken
 
+from spider.products.views import CategoryViewSet, CompanyViewSet, ProductViewSet
 from spider.users.api.views import UserViewSet
-from spider.products.views import (CategoryViewSet, CompanyViewSet, ProductViewSet)
-
 
 if settings.DEBUG:
     router = DefaultRouter()
